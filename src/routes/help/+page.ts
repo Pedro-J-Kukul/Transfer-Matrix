@@ -1,5 +1,5 @@
 export function load() {
   return {
-    title: "Search",
+    title: "Help",
   };
 }

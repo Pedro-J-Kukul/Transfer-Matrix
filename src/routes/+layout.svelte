@@ -1,46 +1,23 @@
 <script lang="ts">
-  import Header from './header.svelte'; // Import your Header component
-  import { page } from '$app/stores';
-
-let { title } = $page.data;
-
-
-
+  import "../app.css";
+  import { page } from "$app/stores";
+  import Header from "./header.svelte";
+  import ContactForm from "$lib/components/Contact_Form/contactForm.svelte";
+  let { title } = $page.data;
+  $: title = $page.data?.title ?? "Default Title";
 </script>
-  
-<div id="layout">
-  <!-- Pass the title to the Header -->
-  <Header title={title || "Default Page"}/>
-  
-  
-  <!-- Page-specific content -->
-  <main>
+
+<svelte:head>
+  <title>{title}</title>
+  <meta name="description" content="About this app" />
+</svelte:head>
+
+<div class="h-screen flex flex-col">
+  <Header {title} />
+  <main class="flex-grow overflow-y-auto p-4">
     <slot />
   </main>
-  <footer>
-    <p>&copy; 2024 My Website</p>
+  <footer class="p-4 bg-purple-900 text-white text-center">
+    <p>&copy; 2024 Melo</p>
   </footer>
 </div>
-
-   <style>
-     #layout {
-       display: flex;
-       flex-direction: column;
-       min-height: 100vh;
-     }
-   
-     main {
-       flex: 1;
-       padding: 20px;
-       margin-top: 60px; /* Ensure content doesn't overlap the fixed header */
-       box-sizing: border-box;
-     }
-   
-     footer {
-       background-color: #3d014b;
-       color: white;
-       text-align: center;
-       padding: 10px;
-     }
-   </style>
-   

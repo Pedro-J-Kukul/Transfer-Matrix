@@ -1,6 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import type { JSONData, School, Course, Programme } from "./types";
+  import type { JSONData, School, Course } from "./types";
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
 
   let jsonData: JSONData = { schools: [] };
   let filteredData: JSONData = { schools: [] };
@@ -11,6 +14,7 @@
   let schools: string[] = [];
   let years: number[] = [];
   let programmes: string[] = [];
+  let showTable = false;
 
   onMount(async () => {
     const response = await fetch("src/static/data/course.json");
@@ -32,7 +36,6 @@
         )
       ),
     ];
-    filteredData = jsonData;
   });
 
   function filterResults() {
@@ -51,7 +54,8 @@
 
     const filterByQuery = (course: Course) =>
       searchQuery
-        ? course.name.includes(searchQuery) || course.code.includes(searchQuery)
+        ? course.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          course.code.toLowerCase().includes(searchQuery.toLowerCase())
         : true;
 
     filteredData = {
@@ -68,30 +72,42 @@
         }))
         .filter((school) => school.courses.length > 0),
     };
+
+    showTable = filteredData.schools.length > 0;
   }
 </script>
 
-<div class="container">
-  <div class="filters">
+<div class="search-bar-container">
+  <img
+    src="path/to/image.png"
+    alt="Search Illustration"
+    class="placeholder-image"
+  />
+
+  <div class="search-container">
     <input
-      class="search-bar"
+      class="search-input"
       type="text"
-      placeholder="Search by course or code"
+      aria-label="Search"
+      placeholder="Search by course code or name..."
       bind:value={searchQuery}
-      on:input={filterResults}
     />
-    <select
-      class="dropdown"
-      bind:value={selectedProgramme}
-      on:change={filterResults}
+
+    <button
+      id="search-button"
+      class="search-button"
+      type="button"
+      on:click={filterResults}
     >
-      <option value="">Select Programme</option>
-      {#each programmes as programme}
-        <option value={programme}>{programme}</option>
-      {/each}
-    </select>
+      Search
+    </button>
+  </div>
+
+  <label class="filter-label">Filter By:</label>
+  <div class="filter-container">
+    <!-- School Filter -->
     <select
-      class="dropdown"
+      class="filter-dropdown"
       bind:value={selectedSchool}
       on:change={filterResults}
     >
@@ -100,8 +116,22 @@
         <option value={school}>{school}</option>
       {/each}
     </select>
+
+    <!-- Programme Filter -->
     <select
-      class="dropdown"
+      class="filter-dropdown"
+      bind:value={selectedProgramme}
+      on:change={filterResults}
+    >
+      <option value="">Select Programme</option>
+      {#each programmes as programme}
+        <option value={programme}>{programme}</option>
+      {/each}
+    </select>
+
+    <!-- Year Filter -->
+    <select
+      class="filter-dropdown"
       bind:value={selectedYear}
       on:change={filterResults}
     >
@@ -111,93 +141,107 @@
       {/each}
     </select>
   </div>
-  <div>
-    <table class="transfer-table">
-      <thead>
-        <tr>
-          <th colspan="4"
-            >{selectedSchool ? selectedSchool : "Feeder Institution"}</th
-          >
-          <th colspan="4">University of Belize</th>
-        </tr>
-        <tr>
-          <th>Code</th>
-          <th>Course</th>
-          <th>Year</th>
-          <th>Code</th>
-          <th>Course</th>
-          <th>Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each filteredData.schools as school}
-          {#each school.courses as course}
-            <tr>
-              <td>{course.code}</td>
-              <td>{course.name}</td>
-              <td>{course.years.join(", ")}</td>
-              <td>{course.transferStatus.universityCode}</td>
-              <td>{course.transferStatus.universityCourse}</td>
-              <td>{course.transferStatus.status}</td>
-            </tr>
+
+  {#if showTable}
+    <div id="table-container">
+      <table class="transfer-table">
+        <thead>
+          <tr class="firstrow">
+            <th>Code</th>
+            <th>Course</th>
+            <th>Year</th>
+            <th>University Code</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {#each filteredData.schools as school}
+            {#each school.courses as course}
+              <tr>
+                <td>{course.code}</td>
+                <td>{course.name}</td>
+                <td>{course.years.join(", ")}</td>
+                <td>{course.transferStatus.universityCode}</td>
+                <td>{course.transferStatus.status}</td>
+              </tr>
+            {/each}
           {/each}
-        {/each}
-      </tbody>
-    </table>
-  </div>
+        </tbody>
+      </table>
+    </div>
+  {/if}
 </div>
 
 <style>
-  .container {
-    max-width: 800px;
-    margin: auto;
-    margin-top: 5cm;
-    padding: 1rem;
-    font-family: Arial, sans-serif;
-  }
-  .search-bar,
-  .dropdown {
-    margin-bottom: 1rem;
-  }
-  .transfer-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 2rem;
-  }
-
-  .transfer-table th,
-  .transfer-table td {
-    padding: 12px;
-    text-align: left;
-    border: 1px solid #ddd;
-  }
-
-  .transfer-table th {
-    background-color: #5c2e91;
-    color: white;
-  }
-
-  .transfer-table td {
-    background-color: #f9f9f9;
-  }
-
-  .transfer-table th[colspan="4"] {
+  .search-bar-container {
+    width: 80%;
+    margin: 0 auto;
     text-align: center;
-    font-size: 18px;
-    background-color: #4a1e6b;
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #3d014b;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+  }
+
+  .search-button {
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    background-color: #3d014b;
     color: white;
-    font-weight: bold;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
   }
 
-  .transfer-table th[colspan="4"]:last-child {
-    background-color: #5c2e91;
+  .filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
   }
 
-  .transfer-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+  .filter-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #3d014b;
+    border-radius: 5px;
   }
 
-  .transfer-table tr:hover {
-    background-color: #ddd;
+  #table-container {
+    margin-top: 20px;
+    max-width: 100%;
+    overflow-y: auto;
+    border-radius: 10px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 90%;
+  }
+
+  th,
+  td {
+    border: 1px solid #3d014b;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .placeholder-image {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
   }
 </style>

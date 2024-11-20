@@ -1,7 +1,5 @@
-import type { PageLoad } from "./$types";
-
-export const load: PageLoad = () => {
+export function load() {
   return {
-    title: "Home Page",
+    title: "Home",
   };
-};
+}
