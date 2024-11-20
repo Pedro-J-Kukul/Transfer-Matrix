@@ -1,0 +1,6 @@
+<script>
+  let filterData = {};
+</script>
+
+<Search on:filterChange="{e => filterData = e.detail}" />
+<Table {filterData} />

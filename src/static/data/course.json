@@ -1,0 +1,74 @@
+{
+  "schools": [
+    {
+      "name": "Feeder School 1",
+      "courses": [
+        {
+          "name": "Introduction to Biology",
+          "code": "BIO101",
+          "programmes": [
+            {
+              "name": "Biology",
+              "code": "BIO"
+            },
+            {
+              "name": "Environmental Science",
+              "code": "ENVSCI"
+            }
+          ],
+          "years": [2020, 2021, 2022],
+          "transferStatus": {
+            "universityCourse": "General Biology I",
+            "universityCode": "BIO1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Calculus I",
+          "code": "MATH101",
+          "programmes": [
+            {
+              "name": "Mathematics",
+              "code": "MATH"
+            },
+            {
+              "name": "Engineering",
+              "code": "ENG"
+            }
+          ],
+          "years": [2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Calculus 101",
+            "universityCode": "CALC1001",
+            "status": "Not Transferable"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Feeder School 2",
+      "courses": [
+        {
+          "name": "Chemistry Basics",
+          "code": "CHEM100",
+          "programmes": [
+            {
+              "name": "Chemistry",
+              "code": "CHEM"
+            },
+            {
+              "name": "Pharmaceutical Sciences",
+              "code": "PHARM"
+            }
+          ],
+          "years": [2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Introductory Chemistry",
+            "universityCode": "CHEM101",
+            "status": "Transferable"
+          }
+        }
+      ]
+    }
+  ]
+}

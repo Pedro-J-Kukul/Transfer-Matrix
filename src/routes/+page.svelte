@@ -1,8 +1,10 @@
 <script lang="ts">
-    import Table from '../Components/table/table.svelte';
-  </script>
-  
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+	import type { PageData } from './$types';
 
-<Table feeder="High School" mainfeeder="University of Belize" />
+	let { data }: { data: PageData } = $props();
+</script>
+
+<h1>Home</h1>
+<p>faoidsjfaodisfjoisdf</p>
+<h1>{data.title}</h1>
+<p>faoidsjfaodisfjoisdf</p>
