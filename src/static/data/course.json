@@ -14,7 +14,7 @@
           "transferStatus": {
             "universityCourse": "General Biology I",
             "universityCode": "BIO1001",
-            "status": "Transferable"
+            "status": true
           }
         },
         {
@@ -28,7 +28,7 @@
           "transferStatus": {
             "universityCourse": "Calculus 101",
             "universityCode": "CALC1001",
-            "status": "Not Transferable"
+            "status": false
           }
         },
         {
@@ -42,7 +42,7 @@
           "transferStatus": {
             "universityCourse": "Physics I",
             "universityCode": "PHYS1100",
-            "status": "Transferable"
+            "status": true
           }
         }
       ]
@@ -61,7 +61,7 @@
           "transferStatus": {
             "universityCourse": "Introductory Chemistry",
             "universityCode": "CHEM101",
-            "status": "Transferable"
+            "status": true
           }
         },
         {
@@ -75,7 +75,7 @@
           "transferStatus": {
             "universityCourse": "Organic Chemistry I",
             "universityCode": "CHEM2001",
-            "status": "Not Transferable"
+            "status": false
           }
         }
       ]
@@ -94,7 +94,7 @@
           "transferStatus": {
             "universityCourse": "Psychology 101",
             "universityCode": "PSYC1001",
-            "status": "Transferable"
+            "status": true
           }
         },
         {
@@ -108,7 +108,7 @@
           "transferStatus": {
             "universityCourse": "Sociology I",
             "universityCode": "SOC1100",
-            "status": "Transferable"
+            "status": true
           }
         },
         {
@@ -122,7 +122,7 @@
           "transferStatus": {
             "universityCourse": "Introduction to Philosophy",
             "universityCode": "PHIL1001",
-            "status": "Not Transferable"
+            "status": false
           }
         }
       ]
@@ -141,7 +141,7 @@
           "transferStatus": {
             "universityCourse": "Principles of Business",
             "universityCode": "BUS1100",
-            "status": "Transferable"
+            "status": true
           }
         },
         {
@@ -155,7 +155,7 @@
           "transferStatus": {
             "universityCourse": "Introduction to Accounting",
             "universityCode": "ACC1001",
-            "status": "Not Transferable"
+            "status": false
           }
         }
       ]

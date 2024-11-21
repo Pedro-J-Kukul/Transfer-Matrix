@@ -6,7 +6,7 @@ export interface Programme {
 export interface TransferStatus {
   universityCourse: string;
   universityCode: string;
-  status: string;
+  status: boolean;
 }
 
 export interface Course {

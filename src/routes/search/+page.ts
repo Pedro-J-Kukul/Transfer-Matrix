@@ -3,3 +3,4 @@ export function load() {
     title: "Search",
   };
 }
+export const prerender = false;

@@ -3,3 +3,4 @@ export function load() {
     title: "Home",
   };
 }
+export const prerender = true;

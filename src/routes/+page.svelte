@@ -4,80 +4,61 @@
   export let data: PageData;
 </script>
 
-<main>
-  <h1>Welcome to the University of Belize Transfer Matrix!</h1>
-  <p>
-    The Equivalency Matrix is designed to be a resource to identify potential
-    transfer credit and associated University of Belize course equivalents from
-    completed course work at other academic institutions. This database is
-    provided as a service for students wanting to know whether the course(s)
-    they are taking or plan to take will transfer to the University of Belize.
-    The database is for reference only and is continually being updated as new
-    courses are evaluated. It is neither an official determination nor a
+<!-- Banner Section -->
+<div
+  class="bg-purple-900 text-white h-32 w-full text-2xl font-bold overflow-hidden"
+  style="background-image: url('src/static/images/banner.svg'); background-size: cover; background-position: center;"
+></div>
+
+<!-- Content Section -->
+<div
+  class="px-5 py-4 mt-8 max-w-7xl mx-auto align-middle items-center flex flex-col columns-1 gap-5"
+>
+  <p class="text-lg leading-relaxed text-gray-800 text-center">
+    &nbsp;The Equivalency Matrix is designed to be a resource to identify
+    potential transfer credit and associated University of Belize course
+    equivalents from completed coursework at other academic institutions. This
+    database is provided as a service for students wanting to know whether the
+    course(s) they are taking or plan to take will transfer to the University of
+    Belize. The database is for reference only and is continually being updated
+    as new courses are evaluated. It is neither an official determination nor a
     guarantee of transfer credit equivalencies. All information contained within
     this Matrix is subject to change, without prior notification. Final course
-    equivalency is determined by the university's academic departments.<br /> Courses
-    not appearing in the Matrix may transfer, but most likely have not been evaluated
-    yet. Current UB students desiring an evaluation of courses not appearing in the
-    Matrix should follow up with the Records Office. Credits for college-level courses
-    must be completed with a grade of "C" (2.0) or better.
+    equivalency is determined by the university's academic departments.
+  </p>
+  <p class="text-lg leading-relaxed text-gray-800 text-center">
+    &nbsp;Courses not appearing in the Matrix may transfer, but most likely have
+    not been evaluated yet. Current UB students desiring an evaluation of
+    courses not appearing in the Matrix should follow up with the Records
+    Office. Credits for college-level courses must be completed with a grade of
+    "C" (2.0) or better.
   </p>
 
-  <div class="button-container">
-    <a href="/search"
-      ><button class="button">
-        <i class="fas fa-search"></i> Search
-      </button></a
-    >
-    <a href="/about"
-      ><button class="button">
-        <i class="fas fa-search"></i> About
-      </button></a
-    >
-    <a href="/help"
-      ><button class="button">
-        <i class="fas fa-search"></i> Help
-      </button></a
-    >
+  <!-- Button Section -->
+  <div class="flex flex-row items-center gap-4 mt-8">
+    <a href="/search" class="flex items-center gap-2">
+      <button
+        class="flex items-center bg-purple-900 text-white py-2 px-6 rounded-lg text-lg hover:bg-purple-700 transition duration-300 ease-in-out"
+      >
+        <img
+          src="src/static/images/magnifying-glass.svg"
+          alt="Search Icon"
+          class="h-6 w-6"
+        />
+        <span>Search</span>
+      </button>
+    </a>
+    <a href="/help" class="flex items-center gap-2">
+      <button
+        class="flex items-center bg-purple-900 text-white py-2 px-6 rounded-lg text-lg hover:bg-purple-700 transition duration-300 ease-in-out"
+      >
+        <img
+          src="src/static/images/question-mark.svg"
+          alt="Help Icon"
+          class="h-6 w-6"
+        />
+        <span>Help</span>
+      </button>
+    </a>
   </div>
-</main>
-
-<style>
-  main {
-    padding-top: 40px;
-    text-align: center;
-    max-width: 1500px;
-    margin: auto;
-  }
-
-  h1 {
-    font-size: 3rem;
-    color: #3d014b;
-  }
-
-  p {
-    font-size: 18px;
-    line-height: 2;
-  }
-
-  .button-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-
-  .button {
-    background-color: #3d014b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-
-  .button:hover {
-    background-color: #5a2377;
-  }
-</style>
+</div>

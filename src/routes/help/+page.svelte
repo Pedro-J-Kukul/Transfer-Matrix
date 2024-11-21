@@ -10,41 +10,45 @@
   };
 </script>
 
-<!-- svelte-ignore a11y_img_redundant_alt -->
-<div class="banner-image">
-  src="https://www.ubelearn.com/pluginfile.php/1/theme_lambda/logo/1696980537/UB_logo_2017%20%282%29.png"
-</div>
+<!-- Banner Section -->
+<div
+  class="bg-purple-900 text-white h-32 w-full text-2xl font-bold flex items-center justify-center"
+  style="background-image: url('src/static/images/banner.svg'); background-size: cover; background-position: center;"
+></div>
 
-<main>
-  <h1>Need help?</h1>
-  <p>
-    If you are still in need of assistance or would like to make an inquiry,
-    feel free to reach out to us.
-  </p>
-  <p>You can reach us using the information provided:</p>
+<main class="py-10 px-4 md:px-16 lg:px-32 max-w-6xl mx-auto">
+  <!-- Content Section -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <!-- Left Column: "Need Help?" Section -->
+    <div class="bg-white border-b-4 border-gray-300 p-6 rounded-lg shadow-md">
+      <h1 class="text-3xl font-bold text-purple-900">Need help?</h1>
+      <p class="text-gray-700 mt-4">
+        If you are still in need of assistance or would like to make an inquiry,
+        feel free to reach out to us.
+      </p>
+      <p class="text-gray-700 mt-2">
+        You can reach us using the information provided:
+      </p>
+    </div>
 
-  <div class="contact-card">
-    <h2>Contact us</h2>
-    <p>{contactInfo.title}</p>
-    <p>{contactInfo.location}</p>
-    <p><a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a></p>
-    <p>{contactInfo.phone}</p>
+    <!-- Right Column: Contact Card -->
+    <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-semibold text-purple-900 mb-4">Contact us</h2>
+      <p class="text-gray-800 font-bold">{contactInfo.title}</p>
+      <p class="text-gray-700">{contactInfo.location}</p>
+      <p>
+        <a
+          href={`mailto:${contactInfo.email}`}
+          class="text-purple-700 underline hover:text-purple-900"
+        >
+          {contactInfo.email}
+        </a>
+      </p>
+      <p class="text-gray-700">{contactInfo.phone}</p>
+    </div>
   </div>
 </main>
 
 <style>
-  main {
-    padding-top: 40px;
-    text-align: center;
-    max-width: 800px;
-    margin: auto;
-  }
-
-  .contact-card {
-    background-color: #f0f0f0;
-    padding: 0.45rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 2rem;
-  }
+  /* Add additional styling if necessary */
 </style>

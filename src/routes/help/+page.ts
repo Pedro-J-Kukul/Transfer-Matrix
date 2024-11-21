@@ -3,3 +3,4 @@ export function load() {
     title: "Help",
   };
 }
+export const prerender = true;
