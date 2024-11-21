@@ -20,7 +20,7 @@
   let message = defaultMessage;
 
   onMount(async () => {
-    const response = await fetch("src/static/data/course.json");
+    const response = await fetch("/data/course.json");
     jsonData = await response.json();
     schools = jsonData.schools.map((school) => school.name);
     years = [
@@ -167,7 +167,7 @@
           on:click={filterResults}
         >
           <img
-            src="src/static/images/magnifying-glass.svg"
+            src="/images/magnifying-glass.svg"
             alt="Search Icon"
             class="h-6 w-6"
           />

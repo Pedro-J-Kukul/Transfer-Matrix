@@ -4,7 +4,7 @@
 <!-- Banner Section -->
 <div
   class="bg-purple-900 text-white h-32 w-full text-2xl font-bold overflow-hidden"
-  style="background-image: url('src/static/images/banner.svg'); background-size: cover; background-position: center;"
+  style="background-image: url('/images/banner.svg'); background-size: cover; background-position: center;"
 ></div>
 
 <!-- Content Section -->
@@ -38,7 +38,7 @@
         class="flex items-center bg-purple-900 text-white py-2 px-6 rounded-lg text-lg hover:bg-purple-700 transition duration-300 ease-in-out"
       >
         <img
-          src="src/static/images/magnifying-glass.svg"
+          src="/images/magnifying-glass.svg"
           alt="Search Icon"
           class="h-6 w-6"
         />
@@ -49,11 +49,7 @@
       <button
         class="flex items-center bg-purple-900 text-white py-2 px-6 rounded-lg text-lg hover:bg-purple-700 transition duration-300 ease-in-out"
       >
-        <img
-          src="src/static/images/question-mark.svg"
-          alt="Help Icon"
-          class="h-6 w-6"
-        />
+        <img src="/images/question-mark.svg" alt="Help Icon" class="h-6 w-6" />
         <span>Help</span>
       </button>
     </a>

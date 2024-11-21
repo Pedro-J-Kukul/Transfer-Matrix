@@ -10,7 +10,7 @@
 <!-- Banner Section -->
 <div
   class="bg-purple-900 text-white h-32 w-full text-2xl font-bold flex items-center justify-center"
-  style="background-image: url('src/static/images/banner.svg'); background-size: cover; background-position: center;"
+  style="background-image: url('/images/banner.svg'); background-size: cover; background-position: center;"
 ></div>
 
 <main class="py-10 px-4 md:px-16 lg:px-32 max-w-6xl mx-auto">

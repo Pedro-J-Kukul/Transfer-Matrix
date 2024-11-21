@@ -72,7 +72,7 @@
     <a href="/" class="flex items-center justify-center w-full h-full">
       {#if browser}
         <img
-          src="src/static/images/logo.svg"
+          src="/images/logo.svg"
           alt="UB Logo"
           class="object-contain h-25"
           on:error={() => console.error("Logo failed to load")}
