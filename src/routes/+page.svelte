@@ -3,8 +3,8 @@
 
 <!-- Banner Section -->
 <div
-  class="bg-purple-900 text-white h-32 w-full text-2xl font-bold overflow-hidden"
-  style="background-image: url('/images/banner.svg'); background-size: cover; background-position: center;"
+  class="bg-purple-700 text-white h-32 w-full text-2xl font-bold overflow-hidden"
+  style="background-image: url('/images/banner.svg'); background-size: cover; background-position: center; height: 300px"
 ></div>
 
 <!-- Content Section -->

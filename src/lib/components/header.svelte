@@ -49,37 +49,41 @@
 
 <!-- Header -->
 <header
-  class="flex items-center justify-between h-32 bg-purple-900 text-white shadow-lg px-4 z-30"
+class="flex items-center justify-between h-32 bg-purple-900 text-white shadow-lg px-4 z-30"
+style="background-color: #3d014b; align-items: center;"
 >
-  <!-- Hamburger Button -->
-  <div id="hamburger" class="flex justify-center items-center w-32 h-full">
-    <button
-      class="text-5xl focus:outline-none"
-      on:click={toggleSidebar}
-      aria-label="Toggle menu"
-    >
-      ☰
-    </button>
-  </div>
+<!-- Hamburger Button -->
+<div id="hamburger" class="flex justify-center items-center w-32 h-full">
+  <button
+    class="text-5xl focus:outline-none"
+    on:click={toggleSidebar}
+    aria-label="Toggle menu"
+  >
+    ☰
+  </button>
+</div>
 
-  <!-- Header Title -->
-  <h1 class="text-center text-5xl h-16 align-middle font-bold w-4/5 truncate">
-    {title}
-  </h1>
+<!-- Header Title -->
+<h1
+  class="text-center text-4xl font-bold truncate"
+  style="flex-grow: 1; text-align: center;"
+>
+  {title}
+</h1>
 
-  <!-- Logo -->
-  <div class="flex justify-center items-center w-24 h-fit">
-    <a href="/" class="flex items-center justify-center w-full h-full">
-      {#if browser}
-        <img
-          src="/images/logo.svg"
-          alt="UB Logo"
-          class="object-contain h-25"
-          on:error={() => console.error("Logo failed to load")}
-        />
-      {/if}
-    </a>
-  </div>
+<!-- Logo -->
+<div class="flex justify-center items-center w-24 h-fit">
+  <a href="/" class="flex items-center justify-center w-full h-full">
+    {#if browser}
+      <img
+        src="/images/logo.svg"
+        alt="UB Logo"
+        class="object-contain h-25"
+        on:error={() => console.error("Logo failed to load")}
+      />
+    {/if}
+  </a>
+</div>
 </header>
 
 <!-- Sidebar -->
