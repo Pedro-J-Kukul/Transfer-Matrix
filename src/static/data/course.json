@@ -1,161 +1,1026 @@
 {
   "schools": [
     {
-      "name": "Feeder School 1",
+      "name": "Sacred Heart Junior College",
       "courses": [
         {
-          "name": "Introduction to Biology",
-          "code": "BIO101",
+          "name": "Introduction to Chemistry",
+          "code": "CHEM101",
           "programmes": [
-            { "name": "Biology", "code": "BIO" },
-            { "name": "Environmental Science", "code": "ENVSCI" }
+            {
+              "name": "Chemistry",
+              "code": "CHEM"
+            },
+            {
+              "name": "Pharmacy",
+              "code": "PHARM"
+            }
+          ],
+          "years": [2018, 2019, 2020],
+          "transferStatus": {
+            "universityCourse": "General Chemistry I",
+            "universityCode": "CHEM1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Principles of Accounting",
+          "code": "ACCT201",
+          "programmes": [
+            {
+              "name": "Accounting",
+              "code": "ACCT"
+            },
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            }
+          ],
+          "years": [2019, 2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Financial Accounting",
+            "universityCode": "ACCT2001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Physics",
+          "code": "PHYS101",
+          "programmes": [
+            {
+              "name": "Physics",
+              "code": "PHYS"
+            },
+            {
+              "name": "Engineering",
+              "code": "ENG"
+            }
           ],
           "years": [2020, 2021, 2022],
           "transferStatus": {
-            "universityCourse": "General Biology I",
-            "universityCode": "BIO1001",
-            "status": true
+            "universityCourse": "General Physics I",
+            "universityCode": "PHYS1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Sociology",
+          "code": "SOC101",
+          "programmes": [
+            {
+              "name": "Sociology",
+              "code": "SOC"
+            },
+            {
+              "name": "Criminal Justice",
+              "code": "CJ"
+            }
+          ],
+          "years": [2019, 2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Foundations of Sociology",
+            "universityCode": "SOC1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Literature",
+          "code": "LIT101",
+          "programmes": [
+            {
+              "name": "Literature",
+              "code": "LIT"
+            },
+            {
+              "name": "English",
+              "code": "ENG"
+            }
+          ],
+          "years": [2018, 2019, 2020],
+          "transferStatus": {
+            "universityCourse": "English Literature I",
+            "universityCode": "LIT1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Business",
+          "code": "BUS101",
+          "programmes": [
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            },
+            {
+              "name": "Entrepreneurship",
+              "code": "ENTREP"
+            }
+          ],
+          "years": [2018, 2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Business Fundamentals",
+            "universityCode": "BUS1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Microeconomics",
+          "code": "ECON101",
+          "programmes": [
+            {
+              "name": "Economics",
+              "code": "ECON"
+            },
+            {
+              "name": "Finance",
+              "code": "FIN"
+            }
+          ],
+          "years": [2020, 2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Introduction to Microeconomics",
+            "universityCode": "ECON1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Psychology",
+          "code": "PSY101",
+          "programmes": [
+            {
+              "name": "Psychology",
+              "code": "PSY"
+            },
+            {
+              "name": "Educational Studies",
+              "code": "EDUST"
+            }
+          ],
+          "years": [2018, 2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Foundations of Psychology",
+            "universityCode": "PSY1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Computer Science",
+          "code": "CS101",
+          "programmes": [
+            {
+              "name": "Computer Science",
+              "code": "COMSCI"
+            },
+            {
+              "name": "Information Technology",
+              "code": "IT"
+            }
+          ],
+          "years": [2019, 2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Computer Science Basics",
+            "universityCode": "CS1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Statistics",
+          "code": "STAT101",
+          "programmes": [
+            {
+              "name": "Statistics",
+              "code": "STAT"
+            },
+            {
+              "name": "Mathematics",
+              "code": "MATH"
+            }
+          ],
+          "years": [2020, 2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Basic Statistics",
+            "universityCode": "STAT1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Marketing Fundamentals",
+          "code": "MARK101",
+          "programmes": [
+            {
+              "name": "Marketing",
+              "code": "MARK"
+            },
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            }
+          ],
+          "years": [2019, 2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Introduction to Marketing",
+            "universityCode": "MARK1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Environmental Science",
+          "code": "ENV101",
+          "programmes": [
+            {
+              "name": "Environmental Science",
+              "code": "ENVSCI"
+            },
+            {
+              "name": "Biology",
+              "code": "BIO"
+            }
+          ],
+          "years": [2018, 2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Environmental Science Basics",
+            "universityCode": "ENV1001",
+            "status": "Not Transferable"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Muffles Junior College",
+      "courses": [
+        {
+          "name": "Microeconomics",
+          "code": "ECON101",
+          "programmes": [
+            {
+              "name": "Economics",
+              "code": "ECON"
+            },
+            {
+              "name": "Finance",
+              "code": "FIN"
+            }
+          ],
+          "years": [2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Introduction to Microeconomics",
+            "universityCode": "ECON1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Sociology",
+          "code": "SOC101",
+          "programmes": [
+            {
+              "name": "Sociology",
+              "code": "SOC"
+            },
+            {
+              "name": "Criminal Justice",
+              "code": "CJ"
+            }
+          ],
+          "years": [2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Foundations of Sociology",
+            "universityCode": "SOC1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Psychology",
+          "code": "PSY101",
+          "programmes": [
+            {
+              "name": "Psychology",
+              "code": "PSY"
+            },
+            {
+              "name": "Educational Studies",
+              "code": "EDUST"
+            }
+          ],
+          "years": [2022],
+          "transferStatus": {
+            "universityCourse": "Introduction to Psychology",
+            "universityCode": "PSY1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Literature",
+          "code": "LIT101",
+          "programmes": [
+            {
+              "name": "Literature",
+              "code": "LIT"
+            },
+            {
+              "name": "English",
+              "code": "ENG"
+            }
+          ],
+          "years": [2023],
+          "transferStatus": {
+            "universityCourse": "English Literature I",
+            "universityCode": "LIT1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Chemistry",
+          "code": "CHEM101",
+          "programmes": [
+            {
+              "name": "Chemistry",
+              "code": "CHEM"
+            },
+            {
+              "name": "Pharmacy",
+              "code": "PHARM"
+            }
+          ],
+          "years": [2021, 2022],
+          "transferStatus": {
+            "universityCourse": "General Chemistry I",
+            "universityCode": "CHEM1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Principles of Marketing",
+          "code": "MARK101",
+          "programmes": [
+            {
+              "name": "Marketing",
+              "code": "MARK"
+            },
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            }
+          ],
+          "years": [2020],
+          "transferStatus": {
+            "universityCourse": "Fundamentals of Marketing",
+            "universityCode": "MARK1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Computer Science",
+          "code": "CS101",
+          "programmes": [
+            {
+              "name": "Computer Science",
+              "code": "COMSCI"
+            },
+            {
+              "name": "Information Technology",
+              "code": "IT"
+            }
+          ],
+          "years": [2022],
+          "transferStatus": {
+            "universityCourse": "Computer Science Basics",
+            "universityCode": "CS1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Business",
+          "code": "BUS101",
+          "programmes": [
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            },
+            {
+              "name": "Entrepreneurship",
+              "code": "ENTREP"
+            }
+          ],
+          "years": [2021],
+          "transferStatus": {
+            "universityCourse": "Introduction to Business",
+            "universityCode": "BUS1001",
+            "status": "Not Transferable"
           }
         },
         {
           "name": "Calculus I",
           "code": "MATH101",
           "programmes": [
-            { "name": "Mathematics", "code": "MATH" },
-            { "name": "Engineering", "code": "ENG" }
+            {
+              "name": "Mathematics",
+              "code": "MATH"
+            },
+            {
+              "name": "Engineering",
+              "code": "ENG"
+            }
           ],
-          "years": [2019, 2020],
+          "years": [2021, 2022],
           "transferStatus": {
-            "universityCourse": "Calculus 101",
+            "universityCourse": "Calculus I",
             "universityCode": "CALC1001",
-            "status": false
+            "status": "Transferable"
           }
         },
         {
-          "name": "Physics Basics",
-          "code": "PHYS100",
+          "name": "Environmental Science",
+          "code": "ENV101",
           "programmes": [
-            { "name": "Physics", "code": "PHYS" },
-            { "name": "Astronomy", "code": "ASTRO" }
-          ],
-          "years": [2021, 2022],
-          "transferStatus": {
-            "universityCourse": "Physics I",
-            "universityCode": "PHYS1100",
-            "status": true
-          }
-        }
-      ]
-    },
-    {
-      "name": "Feeder School 2",
-      "courses": [
-        {
-          "name": "Chemistry Basics",
-          "code": "CHEM100",
-          "programmes": [
-            { "name": "Chemistry", "code": "CHEM" },
-            { "name": "Pharmaceutical Sciences", "code": "PHARM" }
-          ],
-          "years": [2021, 2022],
-          "transferStatus": {
-            "universityCourse": "Introductory Chemistry",
-            "universityCode": "CHEM101",
-            "status": true
-          }
-        },
-        {
-          "name": "Organic Chemistry",
-          "code": "CHEM201",
-          "programmes": [
-            { "name": "Chemistry", "code": "CHEM" },
-            { "name": "Biochemistry", "code": "BIOCHEM" }
-          ],
-          "years": [2020, 2021, 2022],
-          "transferStatus": {
-            "universityCourse": "Organic Chemistry I",
-            "universityCode": "CHEM2001",
-            "status": false
-          }
-        }
-      ]
-    },
-    {
-      "name": "Feeder School 3",
-      "courses": [
-        {
-          "name": "Introduction to Psychology",
-          "code": "PSYCH101",
-          "programmes": [
-            { "name": "Psychology", "code": "PSYCH" },
-            { "name": "Cognitive Science", "code": "COGSCI" }
-          ],
-          "years": [2018, 2019, 2020],
-          "transferStatus": {
-            "universityCourse": "Psychology 101",
-            "universityCode": "PSYC1001",
-            "status": true
-          }
-        },
-        {
-          "name": "Sociology Foundations",
-          "code": "SOC101",
-          "programmes": [
-            { "name": "Sociology", "code": "SOC" },
-            { "name": "Anthropology", "code": "ANTH" }
-          ],
-          "years": [2019, 2020, 2021],
-          "transferStatus": {
-            "universityCourse": "Sociology I",
-            "universityCode": "SOC1100",
-            "status": true
-          }
-        },
-        {
-          "name": "Philosophy and Ethics",
-          "code": "PHIL101",
-          "programmes": [
-            { "name": "Philosophy", "code": "PHIL" },
-            { "name": "Humanities", "code": "HUM" }
-          ],
-          "years": [2020, 2021, 2022],
-          "transferStatus": {
-            "universityCourse": "Introduction to Philosophy",
-            "universityCode": "PHIL1001",
-            "status": false
-          }
-        }
-      ]
-    },
-    {
-      "name": "Feeder School 4",
-      "courses": [
-        {
-          "name": "Business Fundamentals",
-          "code": "BUS101",
-          "programmes": [
-            { "name": "Business Administration", "code": "BUS" },
-            { "name": "Economics", "code": "ECON" }
+            {
+              "name": "Environmental Science",
+              "code": "ENVSCI"
+            },
+            {
+              "name": "Biology",
+              "code": "BIO"
+            }
           ],
           "years": [2020, 2021],
           "transferStatus": {
-            "universityCourse": "Principles of Business",
-            "universityCode": "BUS1100",
-            "status": true
+            "universityCourse": "Introduction to Environmental Science",
+            "universityCode": "ENV1001",
+            "status": "Transferable"
+          }
+        }
+      ]
+    },
+    {
+      "name": "St. John's College Junior College",
+      "courses": [
+        {
+          "name": "Introduction to Literature",
+          "code": "LIT101",
+          "programmes": [
+            {
+              "name": "Literature",
+              "code": "LIT"
+            },
+            {
+              "name": "English",
+              "code": "ENG"
+            }
+          ],
+          "years": [2018, 2019],
+          "transferStatus": {
+            "universityCourse": "English Literature I",
+            "universityCode": "LIT1001",
+            "status": "Transferable"
           }
         },
         {
-          "name": "Accounting Principles",
-          "code": "ACC101",
+          "name": "Introduction to Computer Science",
+          "code": "CS101",
           "programmes": [
-            { "name": "Accounting", "code": "ACC" },
-            { "name": "Finance", "code": "FIN" }
+            {
+              "name": "Computer Science",
+              "code": "COMSCI"
+            },
+            {
+              "name": "Information Technology",
+              "code": "IT"
+            }
+          ],
+          "years": [2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Computer Science Basics",
+            "universityCode": "CS1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Principles of Accounting",
+          "code": "ACCT101",
+          "programmes": [
+            {
+              "name": "Accounting",
+              "code": "ACCT"
+            },
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            }
           ],
           "years": [2019, 2020],
           "transferStatus": {
-            "universityCourse": "Introduction to Accounting",
-            "universityCode": "ACC1001",
-            "status": false
+            "universityCourse": "Fundamentals of Accounting",
+            "universityCode": "ACCT1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Sociology",
+          "code": "SOC101",
+          "programmes": [
+            {
+              "name": "Sociology",
+              "code": "SOC"
+            },
+            {
+              "name": "Criminal Justice",
+              "code": "CJ"
+            }
+          ],
+          "years": [2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Foundations of Sociology",
+            "universityCode": "SOC1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Psychology",
+          "code": "PSY101",
+          "programmes": [
+            {
+              "name": "Psychology",
+              "code": "PSY"
+            },
+            {
+              "name": "Educational Studies",
+              "code": "EDUST"
+            }
+          ],
+          "years": [2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Introduction to Psychology",
+            "universityCode": "PSY1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Biology",
+          "code": "BIO101",
+          "programmes": [
+            {
+              "name": "Biology",
+              "code": "BIO"
+            },
+            {
+              "name": "Environmental Science",
+              "code": "ENVSCI"
+            }
+          ],
+          "years": [2018, 2019],
+          "transferStatus": {
+            "universityCourse": "General Biology I",
+            "universityCode": "BIO1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Philosophy",
+          "code": "PHIL101",
+          "programmes": [
+            {
+              "name": "Philosophy",
+              "code": "PHIL"
+            },
+            {
+              "name": "Ethics",
+              "code": "ETHICS"
+            }
+          ],
+          "years": [2021],
+          "transferStatus": {
+            "universityCourse": "Philosophy and Ethics",
+            "universityCode": "PHIL1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Calculus I",
+          "code": "MATH101",
+          "programmes": [
+            {
+              "name": "Mathematics",
+              "code": "MATH"
+            },
+            {
+              "name": "Engineering",
+              "code": "ENG"
+            }
+          ],
+          "years": [2021],
+          "transferStatus": {
+            "universityCourse": "Calculus I",
+            "universityCode": "CALC1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Business",
+          "code": "BUS101",
+          "programmes": [
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            },
+            {
+              "name": "Entrepreneurship",
+              "code": "ENTREP"
+            }
+          ],
+          "years": [2020],
+          "transferStatus": {
+            "universityCourse": "Introduction to Business",
+            "universityCode": "BUS1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Principles of Marketing",
+          "code": "MARK101",
+          "programmes": [
+            {
+              "name": "Marketing",
+              "code": "MARK"
+            },
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            }
+          ],
+          "years": [2018, 2019],
+          "transferStatus": {
+            "universityCourse": "Principles of Marketing",
+            "universityCode": "MARK1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Environmental Science",
+          "code": "ENV101",
+          "programmes": [
+            {
+              "name": "Environmental Science",
+              "code": "ENVSCI"
+            },
+            {
+              "name": "Biology",
+              "code": "BIO"
+            }
+          ],
+          "years": [2019],
+          "transferStatus": {
+            "universityCourse": "Introduction to Environmental Science",
+            "universityCode": "ENV1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Chemistry",
+          "code": "CHEM101",
+          "programmes": [
+            {
+              "name": "Chemistry",
+              "code": "CHEM"
+            },
+            {
+              "name": "Pharmacy",
+              "code": "PHARM"
+            }
+          ],
+          "years": [2020],
+          "transferStatus": {
+            "universityCourse": "General Chemistry I",
+            "universityCode": "CHEM1001",
+            "status": "Not Transferable"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Independence Junior College",
+      "courses": [
+        {
+          "name": "Introduction to Physics",
+          "code": "PHYS101",
+          "programmes": [
+            {
+              "name": "Physics",
+              "code": "PHYS"
+            },
+            {
+              "name": "Engineering",
+              "code": "ENG"
+            }
+          ],
+          "years": [2019, 2020],
+          "transferStatus": {
+            "universityCourse": "General Physics I",
+            "universityCode": "PHYS1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Marketing Fundamentals",
+          "code": "MARK101",
+          "programmes": [
+            {
+              "name": "Marketing",
+              "code": "MARK"
+            },
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            }
+          ],
+          "years": [2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Introduction to Marketing",
+            "universityCode": "MARK1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Environmental Science",
+          "code": "ENV101",
+          "programmes": [
+            {
+              "name": "Environmental Science",
+              "code": "ENVSCI"
+            },
+            {
+              "name": "Biology",
+              "code": "BIO"
+            }
+          ],
+          "years": [2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Environmental Science Basics",
+            "universityCode": "ENV1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Programming",
+          "code": "CS102",
+          "programmes": [
+            {
+              "name": "Computer Science",
+              "code": "COMSCI"
+            },
+            {
+              "name": "Information Technology",
+              "code": "IT"
+            }
+          ],
+          "years": [2021],
+          "transferStatus": {
+            "universityCourse": "Programming Basics",
+            "universityCode": "CS1002",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Business Communication",
+          "code": "BUSC101",
+          "programmes": [
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            },
+            {
+              "name": "Marketing",
+              "code": "MARK"
+            }
+          ],
+          "years": [2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Business Communication Skills",
+            "universityCode": "BUSC1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Psychology",
+          "code": "PSY101",
+          "programmes": [
+            {
+              "name": "Psychology",
+              "code": "PSY"
+            },
+            {
+              "name": "Educational Studies",
+              "code": "EDUST"
+            }
+          ],
+          "years": [2022],
+          "transferStatus": {
+            "universityCourse": "General Psychology",
+            "universityCode": "PSY1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Statistics I",
+          "code": "STAT101",
+          "programmes": [
+            {
+              "name": "Mathematics",
+              "code": "MATH"
+            },
+            {
+              "name": "Economics",
+              "code": "ECON"
+            }
+          ],
+          "years": [2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Introduction to Statistics",
+            "universityCode": "STAT1001",
+            "status": "Transferable"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Galen University",
+      "courses": [
+        {
+          "name": "Introduction to Psychology",
+          "code": "PSY101",
+          "programmes": [
+            {
+              "name": "Psychology",
+              "code": "PSY"
+            },
+            {
+              "name": "Educational Studies",
+              "code": "EDUST"
+            }
+          ],
+          "years": [2018, 2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Foundations of Psychology",
+            "universityCode": "PSY1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Statistics",
+          "code": "STAT101",
+          "programmes": [
+            {
+              "name": "Statistics",
+              "code": "STAT"
+            },
+            {
+              "name": "Mathematics",
+              "code": "MATH"
+            }
+          ],
+          "years": [2020, 2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Basic Statistics",
+            "universityCode": "STAT1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Principles of Marketing",
+          "code": "MARK201",
+          "programmes": [
+            {
+              "name": "Marketing",
+              "code": "MARK"
+            },
+            {
+              "name": "Business Administration",
+              "code": "BUSADMIN"
+            }
+          ],
+          "years": [2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Marketing Principles",
+            "universityCode": "MARK2001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "General Chemistry I",
+          "code": "CHEM101",
+          "programmes": [
+            {
+              "name": "Chemistry",
+              "code": "CHEM"
+            },
+            {
+              "name": "Biology",
+              "code": "BIO"
+            }
+          ],
+          "years": [2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Introductory Chemistry",
+            "universityCode": "CHEM1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Literature",
+          "code": "LIT101",
+          "programmes": [
+            {
+              "name": "English",
+              "code": "ENG"
+            },
+            {
+              "name": "Literature",
+              "code": "LIT"
+            }
+          ],
+          "years": [2020],
+          "transferStatus": {
+            "universityCourse": "English Literature Basics",
+            "universityCode": "LIT1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Computer Applications",
+          "code": "COMP101",
+          "programmes": [
+            {
+              "name": "Computer Science",
+              "code": "COMSCI"
+            },
+            {
+              "name": "Information Technology",
+              "code": "IT"
+            }
+          ],
+          "years": [2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Introduction to Computer Applications",
+            "universityCode": "COMP1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Environmental Science",
+          "code": "ENV101",
+          "programmes": [
+            {
+              "name": "Environmental Science",
+              "code": "ENVSCI"
+            },
+            {
+              "name": "Biology",
+              "code": "BIO"
+            }
+          ],
+          "years": [2022],
+          "transferStatus": {
+            "universityCourse": "Environmental Science Basics",
+            "universityCode": "ENV1001",
+            "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Microeconomics",
+          "code": "ECON101",
+          "programmes": [
+            {
+              "name": "Economics",
+              "code": "ECON"
+            },
+            {
+              "name": "Finance",
+              "code": "FIN"
+            }
+          ],
+          "years": [2018, 2019],
+          "transferStatus": {
+            "universityCourse": "Introduction to Microeconomics",
+            "universityCode": "ECON1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Introduction to Sociology",
+          "code": "SOC101",
+          "programmes": [
+            {
+              "name": "Sociology",
+              "code": "SOC"
+            },
+            {
+              "name": "Criminal Justice",
+              "code": "CJ"
+            }
+          ],
+          "years": [2021],
+          "transferStatus": {
+            "universityCourse": "Foundations of Sociology",
+            "universityCode": "SOC1001",
+            "status": "Transferable"
           }
         }
       ]
