@@ -225,7 +225,7 @@
           <thead>
             <tr class="bg-purple-800 text-white">
               <th class="border border-purple-800 p-2" colspan="4"
-                >Trasnferable Courses</th
+                >Transferable Courses</th
               >
               <th class="border border-purple-800 p-2"
                 ><button

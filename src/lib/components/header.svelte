@@ -73,7 +73,7 @@
       {#if browser}
         <img
           src="/images/logo.svg"
-          alt="UB Logo"
+          alt="Logo"
           class="object-contain h-25"
           on:error={() => console.error("Logo failed to load")}
         />
