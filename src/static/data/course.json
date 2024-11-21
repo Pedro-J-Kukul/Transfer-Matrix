@@ -7,14 +7,8 @@
           "name": "Introduction to Biology",
           "code": "BIO101",
           "programmes": [
-            {
-              "name": "Biology",
-              "code": "BIO"
-            },
-            {
-              "name": "Environmental Science",
-              "code": "ENVSCI"
-            }
+            { "name": "Biology", "code": "BIO" },
+            { "name": "Environmental Science", "code": "ENVSCI" }
           ],
           "years": [2020, 2021, 2022],
           "transferStatus": {
@@ -27,20 +21,28 @@
           "name": "Calculus I",
           "code": "MATH101",
           "programmes": [
-            {
-              "name": "Mathematics",
-              "code": "MATH"
-            },
-            {
-              "name": "Engineering",
-              "code": "ENG"
-            }
+            { "name": "Mathematics", "code": "MATH" },
+            { "name": "Engineering", "code": "ENG" }
           ],
           "years": [2019, 2020],
           "transferStatus": {
             "universityCourse": "Calculus 101",
             "universityCode": "CALC1001",
             "status": "Not Transferable"
+          }
+        },
+        {
+          "name": "Physics Basics",
+          "code": "PHYS100",
+          "programmes": [
+            { "name": "Physics", "code": "PHYS" },
+            { "name": "Astronomy", "code": "ASTRO" }
+          ],
+          "years": [2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Physics I",
+            "universityCode": "PHYS1100",
+            "status": "Transferable"
           }
         }
       ]
@@ -52,20 +54,108 @@
           "name": "Chemistry Basics",
           "code": "CHEM100",
           "programmes": [
-            {
-              "name": "Chemistry",
-              "code": "CHEM"
-            },
-            {
-              "name": "Pharmaceutical Sciences",
-              "code": "PHARM"
-            }
+            { "name": "Chemistry", "code": "CHEM" },
+            { "name": "Pharmaceutical Sciences", "code": "PHARM" }
           ],
           "years": [2021, 2022],
           "transferStatus": {
             "universityCourse": "Introductory Chemistry",
             "universityCode": "CHEM101",
             "status": "Transferable"
+          }
+        },
+        {
+          "name": "Organic Chemistry",
+          "code": "CHEM201",
+          "programmes": [
+            { "name": "Chemistry", "code": "CHEM" },
+            { "name": "Biochemistry", "code": "BIOCHEM" }
+          ],
+          "years": [2020, 2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Organic Chemistry I",
+            "universityCode": "CHEM2001",
+            "status": "Not Transferable"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Feeder School 3",
+      "courses": [
+        {
+          "name": "Introduction to Psychology",
+          "code": "PSYCH101",
+          "programmes": [
+            { "name": "Psychology", "code": "PSYCH" },
+            { "name": "Cognitive Science", "code": "COGSCI" }
+          ],
+          "years": [2018, 2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Psychology 101",
+            "universityCode": "PSYC1001",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Sociology Foundations",
+          "code": "SOC101",
+          "programmes": [
+            { "name": "Sociology", "code": "SOC" },
+            { "name": "Anthropology", "code": "ANTH" }
+          ],
+          "years": [2019, 2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Sociology I",
+            "universityCode": "SOC1100",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Philosophy and Ethics",
+          "code": "PHIL101",
+          "programmes": [
+            { "name": "Philosophy", "code": "PHIL" },
+            { "name": "Humanities", "code": "HUM" }
+          ],
+          "years": [2020, 2021, 2022],
+          "transferStatus": {
+            "universityCourse": "Introduction to Philosophy",
+            "universityCode": "PHIL1001",
+            "status": "Not Transferable"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Feeder School 4",
+      "courses": [
+        {
+          "name": "Business Fundamentals",
+          "code": "BUS101",
+          "programmes": [
+            { "name": "Business Administration", "code": "BUS" },
+            { "name": "Economics", "code": "ECON" }
+          ],
+          "years": [2020, 2021],
+          "transferStatus": {
+            "universityCourse": "Principles of Business",
+            "universityCode": "BUS1100",
+            "status": "Transferable"
+          }
+        },
+        {
+          "name": "Accounting Principles",
+          "code": "ACC101",
+          "programmes": [
+            { "name": "Accounting", "code": "ACC" },
+            { "name": "Finance", "code": "FIN" }
+          ],
+          "years": [2019, 2020],
+          "transferStatus": {
+            "universityCourse": "Introduction to Accounting",
+            "universityCode": "ACC1001",
+            "status": "Not Transferable"
           }
         }
       ]
