@@ -1,10 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import type { JSONData, School, Course } from "./types";
-  import type { PageData } from "./$types";
   import { goto } from "$app/navigation";
-
-  export let data: PageData;
 
   let jsonData: JSONData = { schools: [] };
   let filteredData: JSONData = { schools: [] };
