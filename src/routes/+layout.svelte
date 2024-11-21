@@ -15,7 +15,7 @@
 
 <div class="h-screen flex flex-col">
   <!-- Header -->
-  <!-- <Header {title} /> -->
+  <Header {title} />
 
   <!-- Main Content -->
   <main class="flex-grow overflow-y-auto p-0 m-0">

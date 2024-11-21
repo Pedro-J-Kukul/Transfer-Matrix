@@ -1,34 +1,49 @@
 <script lang="ts">
-  export const prerender = true;
   import { onMount, onDestroy } from "svelte";
-  export let title: string;
+  import { browser } from "$app/environment";
+
+  export let title: string = "University App"; // Default title
 
   let sidebarOpen = false;
+  let isMounted = false;
 
   const toggleSidebar = () => {
     sidebarOpen = !sidebarOpen;
   };
 
   const handleClickOutside = (event: MouseEvent) => {
+    // Ensure we're in the browser and component is mounted
+    if (!browser || !isMounted) return;
+
     const sidebar = document.querySelector("#sidebar");
     const hamburger = document.querySelector("#hamburger");
+
     if (
       sidebarOpen &&
       sidebar &&
-      !sidebar.contains(event.target as Node) &&
-      !hamburger?.contains(event.target as Node)
+      hamburger &&
+      event.target instanceof Node &&
+      !sidebar.contains(event.target) &&
+      !hamburger.contains(event.target)
     ) {
       sidebarOpen = false;
     }
   };
 
-  // Add click listener to detect clicks outside
   onMount(() => {
-    document.addEventListener("click", handleClickOutside);
+    // Ensure we're in the browser environment
+    if (browser) {
+      isMounted = true;
+      document.addEventListener("click", handleClickOutside);
+    }
   });
 
   onDestroy(() => {
-    document.removeEventListener("click", handleClickOutside);
+    // Ensure we're in the browser environment
+    if (browser) {
+      isMounted = false;
+      document.removeEventListener("click", handleClickOutside);
+    }
   });
 </script>
 
@@ -55,11 +70,14 @@
   <!-- Logo -->
   <div class="flex justify-center items-center w-24 h-fit">
     <a href="/" class="flex items-center justify-center w-full h-full">
-      <img
-        src="src/static/images/logo.svg"
-        alt="UB Logo"
-        class="object-contain h-25"
-      />
+      {#if browser}
+        <img
+          src="src/static/images/logo.svg"
+          alt="UB Logo"
+          class="object-contain h-25"
+          on:error={() => console.error("Logo failed to load")}
+        />
+      {/if}
     </a>
   </div>
 </header>

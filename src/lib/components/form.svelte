@@ -1,123 +1,122 @@
 <script lang="ts">
-  import { onMount, onDestroy } from "svelte";
+  import { writable } from "svelte/store";
 
-  let name: string = "";
-  let email: string = "";
-  let subject: string = "";
-  let message: string = "";
-  let isFormOpen: boolean = false;
-
-  const toggleForm = () => {
-    isFormOpen = !isFormOpen;
-  };
-
-  const closeForm = () => {
-    isFormOpen = false;
-  };
-
-  const handleOutsideClick = (event: MouseEvent) => {
-    const form = document.querySelector(".contact-form") as HTMLElement;
-    if (
-      form &&
-      !form.contains(event.target as Node) &&
-      !(event.target as HTMLElement).matches(".contact-icon")
-    ) {
-      closeForm();
-    }
-  };
-
-  $: {
-    if (isFormOpen) {
-      window.addEventListener("click", handleOutsideClick);
-    } else {
-      window.removeEventListener("click", handleOutsideClick);
-    }
+  // Form data interface
+  interface ContactFormData {
+    name: string;
+    email: string;
+    message: string;
   }
 
-  onDestroy(() => {
-    window.removeEventListener("click", handleOutsideClick);
-  });
+  // Initial form state
+  const initialFormState: ContactFormData = {
+    name: "",
+    email: "",
+    message: "",
+  };
+
+  // Form data store
+  const formData = writable<ContactFormData>(initialFormState);
+
+  // Overlay visibility store
+  const isOverlayOpen = writable<boolean>(false);
+
+  // Function to open overlay
+  function openOverlay() {
+    isOverlayOpen.set(true);
+  }
+
+  // Function to close overlay
+  function closeOverlay() {
+    isOverlayOpen.set(false);
+  }
+
+  // Form submission handler
+  function handleSubmit() {
+    // Validate form data
+    if (!$formData.name || !$formData.email || !$formData.message) {
+      alert("Please fill out all fields");
+      return;
+    }
+
+    // Here you would typically send the form data to a backend
+    console.log("Form submitted:", $formData);
+
+    // Reset form and close overlay
+    formData.set(initialFormState);
+    closeOverlay();
+  }
 </script>
 
-<!-- Contact Icon -->
-<button
-  class="fixed bottom-5 right-5 bg-purple-700 text-white p-4 rounded-full text-xl flex justify-center items-center cursor-pointer z-50 shadow-lg"
-  on:click={toggleForm}
->
-  Send Messge
-</button>
-
-<!-- Form Overlay -->
-<div
-  class={`fixed inset-0 bg-black bg-opacity-50 flex items-end sm:items-center justify-center z-40 transition-opacity ${
-    isFormOpen
-      ? "opacity-100 pointer-events-auto"
-      : "opacity-0 pointer-events-none"
-  }`}
->
-  <!-- Contact Form -->
-  <div
-    class="contact-form bg-white p-6 rounded-lg shadow-lg max-w-md w-full relative"
+<div class="relative">
+  <button
+    on:click={openOverlay}
+    class="fixed bottom-4 right-4 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition"
   >
-    <!-- Close Button -->
-    <button
-      class="absolute top-2 right-2 text-purple-700 text-2xl"
-      on:click={closeForm}
-    >
-      &times;
-    </button>
+    Contact Us
+  </button>
 
-    <h2 class="text-lg font-semibold mb-4 text-purple-800">
-      Seek assistance from faculty by sending an email:
-    </h2>
-
-    <form
-      action="https://formspree.io/f/xblrzwgg"
-      method="POST"
-      class="space-y-4"
+  {#if $isOverlayOpen}
+    <div
+      class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+      on:click|self={closeOverlay}
     >
-      <input
-        type="text"
-        name="name"
-        placeholder="Your Name"
-        bind:value={name}
-        required
-        class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-purple-200"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Your Email"
-        bind:value={email}
-        required
-        class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-purple-200"
-      />
-      <input
-        type="text"
-        name="subject"
-        placeholder="Subject"
-        bind:value={subject}
-        required
-        class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-purple-200"
-      />
-      <textarea
-        name="message"
-        placeholder="Your Message"
-        rows="5"
-        bind:value={message}
-        required
-        class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-purple-200"
-      ></textarea>
-      <button
-        type="submit"
-        class="w-full bg-purple-700 text-white p-3 rounded hover:bg-purple-800 transition duration-200"
+      <div
+        class="bg-white p-6 rounded-lg w-full max-w-md relative"
+        on:click|stopPropagation
       >
-        Send Message
-      </button>
-    </form>
-  </div>
+        <button
+          class="absolute top-2 right-2 text-gray-600 hover:text-gray-800"
+          on:click={closeOverlay}>&times;</button
+        >
+
+        <form on:submit|preventDefault={handleSubmit}>
+          <h2 class="text-xl font-semibold mb-4">Contact Form</h2>
+
+          <div class="mb-4">
+            <label for="name" class="block mb-1">Name</label>
+            <input
+              type="text"
+              id="name"
+              bind:value={$formData.name}
+              required
+              class="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="email" class="block mb-1">Email</label>
+            <input
+              type="email"
+              id="email"
+              bind:value={$formData.email}
+              required
+              class="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="message" class="block mb-1">Message</label>
+            <textarea
+              id="message"
+              bind:value={$formData.message}
+              required
+              class="w-full p-2 border border-gray-300 rounded h-24"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full p-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+          >
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  {/if}
 </div>
 
 <style>
-  /* You can place additional custom styles here, if needed */
+  /* Add any additional custom styles here if needed */
 </style>
