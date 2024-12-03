@@ -49,7 +49,7 @@
 
 <!-- Message Icon in the Bottom Right -->
 <button
-  class="contact-icon fixed bottom-5 right-5 bg-purple-800 text-white p-4 rounded-full cursor-pointer z-50"
+  style="position: fixed; bottom: 70px; right: 40px; background-color: #3d014b; color: white; padding: 1rem; border-radius: 9999px; cursor: pointer; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);"
   on:click={toggleForm}
 >
   <img
@@ -58,6 +58,7 @@
     alt="Message Icon"
   />
 </button>
+
 
 <!-- Form Overlay and Form -->
 {#if browser}

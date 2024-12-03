@@ -1,6 +1,6 @@
 export function load() {
   return {
-    title: "Home",
+    title: "UB Transfer Matrix",
   };
 }
 export const prerender = true;

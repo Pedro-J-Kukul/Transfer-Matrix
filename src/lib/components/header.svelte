@@ -53,7 +53,7 @@ class="flex items-center justify-between h-32 bg-purple-900 text-white shadow-lg
 style="background-color: #3d014b; align-items: center;"
 >
 <!-- Hamburger Button -->
-<div id="hamburger" class="flex justify-center items-center w-32 h-full">
+<div id="hamburger" class="flex justify-center items-center w-32 h-80%">
   <button
     class="text-5xl focus:outline-none"
     on:click={toggleSidebar}
@@ -73,7 +73,7 @@ style="background-color: #3d014b; align-items: center;"
 
 <!-- Logo -->
 <div class="flex justify-center items-center w-24 h-fit">
-  <a href="/" class="flex items-center justify-center w-full h-full">
+  <a href="/" class="flex items-center justify-center w-80% h-80%">
     {#if browser}
       <img
         src="/images/logo.svg"
@@ -92,6 +92,7 @@ style="background-color: #3d014b; align-items: center;"
   class={`fixed top-0 left-0 h-screen w-64 bg-purple-900 text-white shadow-lg transform transition-transform duration-300 ease-in-out ${
     sidebarOpen ? "translate-x-0" : "-translate-x-full"
   } z-20`}
+  style="background-color: #3d014b;"
 >
   <!-- Hamburger Cell (matches header height) -->
   <div class="flex justify-center items-center h-32">

@@ -1,3 +1,4 @@
+<!--Script Section-->
 <script lang="ts">
   import { onMount } from "svelte";
   import type { JSONData, School, Course } from "./types";
@@ -15,11 +16,14 @@
   let programmes: string[] = [];
   let showTable = false;
   let printed = false;
+  let suggestions: string[] = [];
+  let showSuggestions = false;
 
   const defaultMessage = "Search to continue.";
   let message = defaultMessage;
 
   onMount(async () => {
+    window.scrollTo(0, 0);
     const response = await fetch("/data/course.json");
     jsonData = await response.json();
     schools = jsonData.schools.map((school) => school.name);
@@ -41,7 +45,34 @@
     ];
   });
 
+  function updateSuggestions() {
+    if (!searchQuery) {
+      suggestions = [];
+      showSuggestions = false;
+      return;
+    }
+
+    const query = searchQuery.toLowerCase();
+    const allEntries = jsonData.schools.flatMap((school) =>
+      school.courses.flatMap((course) => [course.name, course.code])
+    );
+
+    suggestions = allEntries
+      .filter((entry) => entry.toLowerCase().includes(query))
+      .slice(0, 10); //Limits suggestions to 10 results
+
+    showSuggestions = suggestions.length > 0;
+  }
+
+  function selectSuggestion(suggestion: string) {
+    searchQuery = suggestion;
+    showSuggestions = false;
+    filterResults();
+  }
+
   function filterResults() {
+    showSuggestions = false;
+
     const filterBySchool = (school: School) =>
       selectedSchool ? school.name === selectedSchool : true;
 
@@ -142,24 +173,53 @@
   }
 </script>
 
+<!--HTML Section-->
+
 <section class="w-full h-screen overflow-y-auto p-10">
   <div class="w-4/5 mx-auto text-center">
     <div class="w-4/5 mx-auto text-center">
-      <div class="flex items-center justify-center mb-5">
+      <div class="relative flex items-center justify-center mb-5">
         <button
           class="px-4 py-2 mr-2 text-lg text-white bg-red-500 rounded-md"
           on:click={clearFilters}
         >
           Clear
         </button>
-        <input
-          class="flex-1 px-4 py-2 text-lg border border-purple-800 rounded-l-md focus:outline-none"
-          type="text"
-          aria-label="Search"
-          placeholder="Search by course code or name..."
-          bind:value={searchQuery}
-          on:keypress={handleKeyPress}
-        />
+
+        <div class="relative w-full max-w-lg">
+          <input
+            class="w-full px-4 py-2 text-lg border border-purple-800 rounded-l-md focus:outline-none"
+            type="text"
+            aria-label="Search"
+            placeholder="Search by course code or name..."
+            bind:value={searchQuery}
+            on:input={updateSuggestions}
+            on:keypress={handleKeyPress}
+          />
+          {#if showSuggestions}
+            <ul
+              class="absolute left-0 w-full bg-white border border-gray-300 rounded-md shadow-lg max-h-40 overflow-y-auto z-10"
+            >
+              {#each suggestions as suggestion}
+                <li>
+                  <button
+                    type="button"
+                    class="w-full px-4 py-2 text-left hover:bg-gray-100 focus:outline-none"
+                    on:click={() => selectSuggestion(suggestion)}
+                    on:keydown={(e) => {
+                      if (e.key === "Enter") {
+                        selectSuggestion(suggestion);
+                      }
+                    }}
+                  >
+                    {suggestion}
+                  </button>
+                </li>
+              {/each}
+            </ul>
+          {/if}
+        </div>
+
         <button
           id="search-button"
           class="px-4 py-2 text-lg text-white bg-purple-800 rounded-r-md"
@@ -221,20 +281,27 @@
 
     {#if showTable}
       <div id="table-container" class="mt-5 overflow-y-auto rounded-lg">
-        <table class="table-auto border-collapse border w-11/12 mx-auto" 
-        >
+        <table class="table-auto border-collapse border w-11/12 mx-auto">
           <thead>
-            <tr class="bg-purple-800 text-white" style="background-color: #3d014b; ">
-              <th class="border border-purple-800 p-2" style="font-size: 24px" colspan="4"
-                >Transferable Courses</th
+            <tr
+              class="bg-purple-800 text-white"
+              style="background-color: #3d014b; "
+            >
+              <th
+                class="border border-purple-800 p-2"
+                style="font-size: 24px"
+                colspan="4">Transferable Courses</th
               >
-              <th class="border border-purple-800 p-2" style="text-align: center; vertical-align: middle;"
+              <th
+                class="border border-purple-800 p-2"
+                style="text-align: center; vertical-align: middle;"
                 ><button
                   class="px-4 py-2 text-lg text-white bg-green-700 rounded-md mb-3"
                   on:click={printTable}
                 >
                   Print
-                </button></th>
+                </button></th
+              >
             </tr>
             <tr class="bg-purple-800 text-white">
               <th class="border border-purple-800 p-2">Code</th>
@@ -308,3 +375,21 @@
     </table>
   </div>
 </section>
+
+<!--Style Section-->
+
+<style>
+  .hidden {
+    display: none;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    white-space: nowrap;
+  }
+</style>
