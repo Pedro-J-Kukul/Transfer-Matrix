@@ -52,19 +52,14 @@
   style="position: fixed; bottom: 70px; right: 40px; background-color: #3d014b; color: white; padding: 1rem; border-radius: 9999px; cursor: pointer; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);"
   on:click={toggleForm}
 >
-  <img
-    src="src/static/images/message.svg"
-    class="h-15 w-15"
-    alt="Message Icon"
-  />
+  <img src="/images/message.svg" class="h-15 w-15" alt="Message Icon" />
 </button>
-
 
 <!-- Form Overlay and Form -->
 {#if browser}
   <div
     class={`contact-form-overlay fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-end items-end z-50 transition-all ${isFormOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
-     style="padding-right: 100px; padding-bottom: 100px;"
+    style="padding-right: 100px; padding-bottom: 100px;"
   >
     <div
       class="contact-form bg-white p-6 rounded-lg shadow-lg max-w-sm w-full relative"
