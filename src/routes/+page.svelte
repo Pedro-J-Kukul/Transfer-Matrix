@@ -22,7 +22,7 @@
   </p>
 
   <h2 class="text-3xl font-bold text-center mt-6" style="color: #3d014b;">
-    Key Notes
+    Important Considerations
   </h2>
   <ul
     class="text-lg leading-relaxed list-disc list-inside mx-4"
@@ -38,15 +38,6 @@
         class="font-semibold">academic departments</span
       >.
     </li>
-  </ul>
-
-  <h2 class="text-3xl font-bold text-center mt-6" style="color: #3d014b;">
-    Important Considerations
-  </h2>
-  <ul
-    class="text-lg leading-relaxed list-disc list-inside mx-4"
-    style="color: #3d014b;"
-  >
     <li>
       <span class="font-semibold">Courses Not in the Matrix:</span> If a course
       is not listed in the matrix, it may still be transferable but has likely
@@ -92,9 +83,8 @@
       <button
         class="flex items-center bg-purple-900 text-white py-2 px-6 rounded-lg text-lg hover:bg-purple-700 transition duration-300 ease-in-out"
       >
-      <span>Need Help</span>  
-      <img src="/images/question-mark.svg" alt="Help Icon" class="h-6 w-6" />
-        
+        <span>Need Help</span>
+        <img src="/images/question-mark.svg" alt="Help Icon" class="h-6 w-6" />
       </button>
     </a>
   </div>
