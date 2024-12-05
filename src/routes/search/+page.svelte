@@ -142,7 +142,7 @@
   }
 </script>
 
-<section class="w-full h-screen overflow-y-auto p-4">
+<section class="w-full h-screen overflow-y-auto p-10">
   <div class="w-4/5 mx-auto text-center">
     <div class="w-4/5 mx-auto text-center">
       <div class="flex items-center justify-center mb-5">
@@ -223,13 +223,20 @@
       <div id="table-container" class="mt-5 overflow-y-auto rounded-lg">
         <table class="table-auto border-collapse border w-11/12 mx-auto">
           <thead>
-            <tr class="bg-purple-800 text-white">
-              <th class="border border-purple-800 p-2" colspan="4"
-                >Transferable Courses</th
+            <tr
+              class="bg-purple-800 text-white"
+              style="background-color: #3d014b; "
+            >
+              <th
+                class="border border-purple-800 p-2"
+                style="font-size: 24px"
+                colspan="4">Transferable Courses</th
               >
-              <th class="border border-purple-800 p-2"
+              <th
+                class="border border-purple-800 p-2"
+                style="text-align: center; vertical-align: middle;"
                 ><button
-                  class="px-4 py-2 text-lg text-white bg-green-500 rounded-md mb-3"
+                  class="px-4 py-2 text-lg text-white bg-green-700 rounded-md mb-3"
                   on:click={printTable}
                 >
                   Print

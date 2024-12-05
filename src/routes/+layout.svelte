@@ -23,7 +23,8 @@
   </main>
   <!-- Footer -->
   <Form />
-  <footer class="p-4 bg-purple-900 text-white text-center">
+  <footer class="p-4 bg-purple-900 text-white text-center"
+  style="background-color: #3d014b;">
     <p>&copy; 2024 Melo</p>
   </footer>
 </div>

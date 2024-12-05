@@ -63,6 +63,7 @@
 {#if browser}
   <div
     class={`contact-form-overlay fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-end items-end z-50 transition-all ${isFormOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+     style="padding-right: 100px; padding-bottom: 100px;"
   >
     <div
       class="contact-form bg-white p-6 rounded-lg shadow-lg max-w-sm w-full relative"
