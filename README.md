@@ -1,3 +1,12 @@
+# IMPORTANT
+I oopsied anf forgot to make a branch, check previous commits to see the last good version whcih was on december 4
+
+
+
+
+
+
+
 # sv
 
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
